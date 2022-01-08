@@ -1,10 +1,8 @@
 package com.sat.apisat;
 
 import java.util.List;
-
 import com.sat.apisat.database.RespositorioClientes;
 import com.sat.apisat.entidade.Clientes;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,20 +23,23 @@ public class ClienteRest {
     public List<Clientes>listar(){
         return repositorio.findAll();
     }
+    @GetMapping("/{id}")
+    public Clientes listaClientePorId(@PathVariable(value="id")long id) {
+    	return repositorio.findById(id);
+    }
+
+    @PostMapping("/salvar")
+    public Clientes salvar(@RequestBody Clientes clientes){
+        return repositorio.save(clientes);
+    }
+
+    @PutMapping("/altera")
+    public Clientes alteraCLiente(@RequestBody Clientes clientes){
+        return repositorio.save(clientes);
+    }
     
-
-    @PostMapping
-    public void salvar(@RequestBody Clientes clientes){
-        repositorio.save(clientes);
-    }
-
-    @PutMapping
-    public void alterar(@RequestBody Clientes clientes){
-        if(clientes.getId()>0)
-        repositorio.save(clientes);
-    }
-    @DeleteMapping(value="/mole{id}")  
-    public void  delete(@PathVariable("id") Long id){
-        repositorio.deleteById(id);
+    @DeleteMapping("/mole{id}")  
+    public void deletaCliente(@RequestBody Clientes clientes){
+       repositorio.delete(clientes);
     }
 }
