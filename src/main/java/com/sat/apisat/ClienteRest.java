@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/clients")
 public class ClienteRest {
     @Autowired
     private RespositorioClientes repositorio;
@@ -23,23 +23,23 @@ public class ClienteRest {
     public List<Clientes>listar(){
         return repositorio.findAll();
     }
-    @GetMapping("/{id}")
+    @GetMapping("/client/{id}")
     public Clientes listaClientePorId(@PathVariable(value="id")long id) {
     	return repositorio.findById(id);
     }
 
-    @PostMapping("/salvar")
+    @PostMapping("/save")
     public Clientes salvar(@RequestBody Clientes clientes){
         return repositorio.save(clientes);
     }
 
-    @PutMapping("/altera")
+    @PutMapping("/change")
     public Clientes alteraCLiente(@RequestBody Clientes clientes){
         return repositorio.save(clientes);
     }
     
-    @DeleteMapping("/mole{id}")  
-    public void deletaCliente(@RequestBody Clientes clientes){
-       repositorio.delete(clientes);
+    @DeleteMapping("/delete/{id}")  
+    public Clientes deletaCliente(@PathVariable(value="id") long id){
+       return repositorio.deleteById(id);
     }
 }

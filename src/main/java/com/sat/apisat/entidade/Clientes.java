@@ -21,7 +21,9 @@ public class Clientes {
     private String email;
     @Column(nullable = false)
     private String cpf;
-
+    @Column(nullable = true)
+    private String cnpj;
+  
     public long getId() {
         return id;
     }
@@ -51,6 +53,12 @@ public class Clientes {
     }
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+    public String getCnpj() {
+        return cnpj;
+    }
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 	@Override
 	public int hashCode() {
