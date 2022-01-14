@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/clients") 
 public class ClienteRest {
     private final String frontAngular = "https://angular-sat.herokuapp.com/";
     @SuppressWarnings("deprecation")
