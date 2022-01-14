@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/clients") 
 public class ClienteRest {
-    private final String frontAngular = "https://angular-sat.herokuapp.com/";
+    private final String frontAngular = "http://localhost:4200";
     @SuppressWarnings("deprecation")
     @Bean
     public WebMvcConfigurer corsConfigurer() {

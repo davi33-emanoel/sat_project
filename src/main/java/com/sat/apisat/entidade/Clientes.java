@@ -16,13 +16,13 @@ public class Clientes {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
-    private String telefone;
+    private Number telefone;
     @Column(nullable = false)
     private String email;
     @Column(nullable = true)
-    private String cpf;
+    private Number cpf;
     @Column(nullable = true)
-    private String cnpj;
+    private Number cnpj;
   
     public long getId() {
         return id;
@@ -36,10 +36,10 @@ public class Clientes {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getTelefone() {
+    public Number getTelefone() {
         return telefone;
     }
-    public void setTelefone(String telefone) {
+    public void setTelefone(Number telefone) {
         this.telefone = telefone;
     }
     public String getEmail() {
@@ -48,16 +48,16 @@ public class Clientes {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getCpf() {
+    public Number getCpf() {
         return cpf;
     }
-    public void setCpf(String cpf) {
+    public void setCpf(Number cpf) {
         this.cpf = cpf;
     }
-    public String getCnpj() {
+    public Number getCnpj() {
         return cnpj;
     }
-    public void setCnpj(String cnpj) {
+    public void setCnpj(Number cnpj) {
         this.cnpj = cnpj;
     }
 	@Override
