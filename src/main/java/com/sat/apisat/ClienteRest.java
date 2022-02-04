@@ -27,7 +27,7 @@ public class ClienteRest {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins(frontAngular,"localhost").allowedMethods("GET", "POST", "PUT", "DELETE",
+                registry.addMapping("/**").allowedOrigins(frontAngular).allowedMethods("GET", "POST", "PUT", "DELETE",
                         "OPTIONS", "HEAD", "TRACE", "CONNECT");
             }
         };
