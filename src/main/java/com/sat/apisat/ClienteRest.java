@@ -21,13 +21,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RequestMapping("/clients") 
 public class ClienteRest {
     private final String frontAngular = "https://angular-sat.herokuapp.com";
+    private final String angular = "http://dev.satsolucoes.com.br:7069";
     @SuppressWarnings("deprecation")
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins(frontAngular,"localhost").allowedMethods("GET", "POST", "PUT", "DELETE",
+                registry.addMapping("/**").allowedOrigins(frontAngular,"localhost",angular).allowedMethods("GET", "POST", "PUT", "DELETE",
                         "OPTIONS", "HEAD", "TRACE", "CONNECT");
             }
         };
